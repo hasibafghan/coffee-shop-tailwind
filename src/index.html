@@ -20,9 +20,9 @@
                     <!-- logo -->
                     <img src="media/app-logo.png" alt="Golden Coffee icon" class="h-12"> <!-- Added fixed height -->
                 </div>
-                <ul class="flex gap-8"> <!-- Added gap-8 -->
+                <ul class="flex items-center gap-8"> <!-- Added gap-8 -->
                     <li><a href="#" class="text-orange-300 transition">صفحه اصلی</a></li>
-                    <li class="relative group pb-3">
+                    <li class="relative group py-1">
                         <!-- Added padding-bottom to parent instead of margin-top to dropdown -->
                         <a href="#" class="text-white hover:text-orange-300 transition">فروشگاه</a>
                         <!-- Shop dropdown -->
@@ -56,18 +56,74 @@
                 </ul>
             </nav>
             <!-- left side of navbar (now on the actual left for RTL) -->
-            <div class="flex items-center gap-6 [&:>*]:hover:text-amber-800"> <!-- Added gap-6 -->
+            <div class="flex items-center justify-center gap-6 [&:>*]:hover:text-amber-800">
+                <!-- Shopping Cart with Dropdown -->
+                <div class="relative group py-3">
+                    <button
+                        class="text-orange-200 hover:text-orange-300 transition relative flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        </svg>
+                        <span
+                            class="absolute -top-2 -right-2 bg-orange-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </button>
 
-                <a href="#" class="text-orange-200 hover:text-orange-300 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                    </svg>
-                </a>
-                <!-- sun and moon toggle VIP-->
+                    <!-- Centered Cart Dropdown -->
+                    <div
+                        class="hidden group-hover:block absolute left-1/2 transform -translate-x-1/2 w-72 bg-white dark:bg-zinc-800 rounded-xl shadow-xl z-20 border border-gray-200 dark:border-zinc-700 mt-2">
+                        <div class="p-4">
+                            <h3
+                                class="font-bold text-lg pb-3 border-b border-gray-200 dark:border-zinc-700 dark:text-white text-center">
+                                سبد خرید</h3>
+
+                            <div class="max-h-60 overflow-y-auto py-2 space-y-3">
+                                <!-- Cart Item 1 -->
+                                <div class="flex items-start justify-between px-2">
+                                    <div class="flex items-center gap-3">
+                                        <img src="media/coffee1.jpg" alt="قهوه ویژه"
+                                            class="w-12 h-12 rounded-lg object-cover" loading="lazy">
+                                        <div>
+                                            <h4 class="font-medium text-sm dark:text-white">قهوه ویژه</h4>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400">250 گرم</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-orange-500 font-medium text-sm">250 افغانی</div>
+                                </div>
+
+                                <!-- Cart Item 2 -->
+                                <div class="flex items-start justify-between px-2">
+                                    <div class="flex items-center gap-3">
+                                        <img src="media/coffee2.jpg" alt="کپسول قهوه"
+                                            class="w-12 h-12 rounded-lg object-cover" loading="lazy">
+                                        <div>
+                                            <h4 class="font-medium text-sm dark:text-white">کپسول قهوه</h4>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400">10 عدد</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-orange-500 font-medium text-sm">200 افغانی</div>
+                                </div>
+                            </div>
+
+                            <div class="pt-3 border-t border-gray-200 dark:border-zinc-700">
+                                <div class="flex justify-between items-center mb-3 px-2">
+                                    <span class="font-medium dark:text-white">جمع کل:</span>
+                                    <span class="text-orange-500 font-bold">450 افغانی</span>
+                                </div>
+                                <a href="#"
+                                    class="block w-full bg-orange-500 hover:bg-orange-600 text-white text-center py-2 rounded-lg transition-colors font-medium">
+                                    پرداخت
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dark Mode Toggle -->
                 <!-- moon -->
-                <a href="#" onclick="toggleDarkMode()" class="inline-block dark:hidden text-orange-200 hover:text-orange-300 transition">
+                <a href="#" onclick="toggleDarkMode()"
+                    class="inline-block dark:hidden text-orange-200 hover:text-orange-300 transition">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -75,7 +131,8 @@
                     </svg>
                 </a>
                 <!-- sun -->
-                <a href="#" onclick="toggleDarkMode()" class="hidden dark:inline-block text-orange-200 hover:text-orange-300 transition">
+                <a href="#" onclick="toggleDarkMode()"
+                    class="hidden dark:inline-block text-orange-200 hover:text-orange-300 transition">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -83,7 +140,7 @@
                     </svg>
                 </a>
 
-                <span class=" block w-px h-14 bg-white/20"></span>
+                <span class="block w-px h-14 bg-white/20"></span>
                 <a href="#" class="flex items-center gap-2 text-orange-200 hover:text-orange-300 transition">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="size-6">
