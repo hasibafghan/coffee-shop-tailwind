@@ -11,16 +11,16 @@
 
 <body class="font-dana dark:bg-zinc-800">
     <!-- navbar container -->
-    <header class="flex items-center fixed top-9 left-0 right-0 bg-black/50 w-[90%] h-20 mx-auto rounded-3xl">
+    <header class="sm:flex hidden items-center fixed top-9 left-0 right-0 bg-black/50 w-[90%] h-20 mx-auto rounded-3xl">
         <!-- sub container -->
         <div class="flex justify-between items-center w-full px-6"> <!-- Added w-full and px-6 -->
             <!-- right side of navbar (now on the actual right for RTL) -->
-            <nav class="flex items-center gap-12"> <!-- Added gap-12 -->
+            <nav class="flex items-center  gap-x-7"> <!-- Added gap-12 -->
                 <div>
                     <!-- logo -->
-                    <img src="media/app-logo.png" alt="Golden Coffee icon" class="h-12"> <!-- Added fixed height -->
+                    <img class="xl:h-12 h-10" src="media/app-logo.png" alt="Golden Coffee icon"> <!-- Added fixed height -->
                 </div>
-                <ul class="flex items-center gap-8"> <!-- Added gap-8 -->
+                <ul class="flex items-center gap-[13px] xl:gap-6"> <!-- Added gap-8 -->
                     <li><a href="#" class="text-orange-300 transition">صفحه اصلی</a></li>
                     <li class="relative group py-1">
                         <!-- Added padding-bottom to parent instead of margin-top to dropdown -->
@@ -56,7 +56,7 @@
                 </ul>
             </nav>
             <!-- left side of navbar (now on the actual left for RTL) -->
-            <div class="flex items-center justify-center gap-6 [&:>*]:hover:text-amber-800">
+            <div class="flex items-center justify-center gap-3 xl:gap-6 [&:>*]:hover:text-amber-800">
                 <!-- Shopping Cart with Dropdown -->
                 <div class="relative group py-3">
                     <button
@@ -82,7 +82,7 @@
                                 <!-- Cart Item 1 -->
                                 <div class="flex items-start justify-between px-2">
                                     <div class="flex items-center gap-3">
-                                        <img src="media/coffee1.jpg" alt="قهوه ویژه"
+                                        <img src="media/CoffeeShop-Files/products/p1.png" alt="قهوه ویژه"
                                             class="w-12 h-12 rounded-lg object-cover" loading="lazy">
                                         <div>
                                             <h4 class="font-medium text-sm dark:text-white">قهوه ویژه</h4>
@@ -95,7 +95,7 @@
                                 <!-- Cart Item 2 -->
                                 <div class="flex items-start justify-between px-2">
                                     <div class="flex items-center gap-3">
-                                        <img src="media/coffee2.jpg" alt="کپسول قهوه"
+                                        <img src="media/CoffeeShop-Files/products/p2.png" alt="کپسول قهوه"
                                             class="w-12 h-12 rounded-lg object-cover" loading="lazy">
                                         <div>
                                             <h4 class="font-medium text-sm dark:text-white">کپسول قهوه</h4>
@@ -147,7 +147,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
                     </svg>
-                    <span>ورود | ثبت نام</span>
+                    <span class="hidden xl:inline-block">ورود | ثبت نام</span>
                 </a>
             </div>
         </div>
