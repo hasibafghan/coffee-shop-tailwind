@@ -21,9 +21,21 @@
   src: url(fonts/Dana-Regular.ttf);
 }
 
-body{
+body {
   background-image: url(media/headerBgDesktop.png);
   background-repeat: no-repeat;
   background-size: cover;
   /* background-position: center; */
+}
+
+@media screen and (width<=768px) {
+  body {
+    background-image: url(media/headerBgMobile.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #menu,#shopping-cart-offcanves{
+    visibility: hidden;
+  }
+
 }
