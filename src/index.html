@@ -131,6 +131,13 @@
             stroke="currentColor" class="size-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
         </symbol>
+        <symbol id="chevron-up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+            class="size-6">
+            <path fill-rule="evenodd"
+                d="M11.47 7.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z"
+                clip-rule="evenodd" />
+        </symbol>
+
 
     </svg>
 
@@ -213,7 +220,7 @@
                                             <p class="text-xs text-gray-500 dark:text-gray-400">250 گرم</p>
                                         </div>
                                     </div>
-                                    <div class="text-orange-500 font-medium text-sm">250 افغانی</div>
+                                    <div class="text-orange-400 dark:text-orange-300 font-medium text-sm">250 افغانی</div>
                                 </div>
 
                                 <!-- Cart Item 2 -->
@@ -226,17 +233,17 @@
                                             <p class="text-xs text-gray-500 dark:text-gray-400">10 عدد</p>
                                         </div>
                                     </div>
-                                    <div class="text-orange-500 font-medium text-sm">200 افغانی</div>
+                                    <div class="text-orange-400 dark:text-orange-300 font-medium text-sm">200 افغانی</div>
                                 </div>
                             </div>
 
                             <div class="pt-3 border-t border-gray-200 dark:border-zinc-700">
                                 <div class="flex justify-between items-center mb-3 px-2">
                                     <span class="font-medium dark:text-white">جمع کل:</span>
-                                    <span class="text-orange-500 font-bold">450 افغانی</span>
+                                    <span class="text-orange-400 dark:text-orange-300 font-bold">450 افغانی</span>
                                 </div>
                                 <a href="#"
-                                    class="block w-full bg-orange-500 hover:bg-orange-600 text-white text-center py-2 rounded-lg transition-colors font-medium">
+                                    class="block w-full bg-orange-400 hover:bg-orange-500 text-white text-center py-2 rounded-lg transition-colors font-medium">
                                     پرداخت
                                 </a>
                             </div>
@@ -273,14 +280,14 @@
     <!-- responsive for mobile size -->
     <div class="flex md:hidden items-center justify-between bg-white h-16 px-4 dark:bg-zinc-700 dark:text-white">
         <!-- bar-3 item -->
-        <div id="menu-toggle" class="text-orange-300 cursor-pointer"
-            onclick="document.getElementById('menu').style.visibility='visible'">
+        <div id="menu-button-right-bars-3" class="text-orange-300 cursor-pointer">
             <svg class="size-6">
                 <use href="#bars-3"></use>
             </svg>
         </div>
-        <!-- menu of bar-3 -->
-        <div id="menu" class="fixed top-0 bottom-0 right-0 w-64 min-h-screen pt-4 px-4 bg-white dark:bg-zinc-700 z-20">
+        <!-- offcanvas of bar-3 icon -->
+        <div id="offcanvas-of-right-menu"
+            class="fixed top-0 bottom-0 right-0 w-64 min-h-screen pt-4 px-4 bg-white dark:bg-zinc-700 z-20">
             <!-- header of menu  -->
             <div class="flex items-center justify-between mb-4 pb-5  border-b border-b-gray-300 dark:border-b-white/20">
                 <div class="flex gap-x-3.5">
@@ -292,7 +299,7 @@
                         <use href="#golden-coffee-logo"></use>
                     </svg>
                 </div>
-                <div  class="cursor-pointer" onclick="document.getElementById('menu').style.visibility='hidden'">
+                <div id="close-btn-of-right-menu-inside" class="cursor-pointer">
                     <svg class="w-5 h-5">
                         <use href="#x-mark"></use>
                     </svg>
@@ -309,18 +316,25 @@
                 </a>
             </div>
 
-            <div class="py-2 px-2" id="toggle" onclick="DropDownMode()">
+            <div class="py-2 px-2">
                 <a href="#" class="flex items-center gap-2 text-orange-400 dark:text-orange-200">
-                    <div class="flex items-center justify-between cursor-pointer">
+                    <div class="flex items-center justify-between cursor-pointer" id="toggle">
                         <svg class="size-5">
                             <use href="#shopping-bag"></use>
                         </svg>
                         <span>فروشگاه</span>
-                        <a class="">
-                            <svg class="size-5">
-                                <use href="#chevron-down"></use>
-                            </svg>
-                        </a>
+                        <div>
+                            <!-- <a id="chevron-up" class="hidden">
+                                <svg class="size-5">
+                                    <use href="#chevron-up"></use>
+                                </svg>
+                            </a> -->
+                            <a id="chevron-down">
+                                <svg class="size-5">
+                                    <use href="#chevron-down"></use>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                     <!-- Shop dropdown -->
                     <ul class="text-sm px-3.5" id="dropdown">
@@ -409,9 +423,8 @@
             </svg>
         </div>
 
-        <!-- shopping cart(basket)-->
-        <div class="flex gap-x-2"
-            onclick="document.getElementById('shopping-cart-offcanves').style.visibility='visible'">
+        <!-- shopping cart(basket) icon-->
+        <div class="flex gap-x-2" id="menu-button-left-shopping-cart">
             <a href="#" class="text-orange-300">
                 <svg class="size-6">
                     <use href="#shopping-cart"></use>
@@ -419,13 +432,11 @@
             </a>
         </div>
         <!-- menu of shopping-cart(basket)  -->
-        <div id="shopping-cart-offcanves"
+        <div id="offcanvas-of-left-menu"
             class="fixed top-0 bottom-0 flex flex-col left-0 w-64 min-h-screen py-4 px-4 bg-white dark:bg-zinc-700 z-20">
             <!-- header of menu  -->
-            <div id=""
-                class="flex items-center justify-between mb-4 pb-3 border-b border-b-gray-300 dark:border-b-white/20">
-                <div class="cursor-pointer"
-                    onclick="document.getElementById('shopping-cart-offcanves').style.visibility='hidden'">
+            <div class="flex items-center justify-between mb-4 pb-3 border-b border-b-gray-300 dark:border-b-white/20">
+                <div id="close-btn-of-left-menu-inside" class="cursor-pointer">
                     <svg class="size-5">
                         <use href="#x-mark"></use>
                     </svg>

@@ -34,7 +34,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
   }
-  #menu,#shopping-cart-offcanves{
+  #offcanvas-of-right-menu,#offcanvas-of-left-menu{
     visibility: hidden;
   }
 
