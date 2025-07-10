@@ -14,7 +14,9 @@
 
   /*project font */
   --font-dana: "dana";
+  
 }
+
 
 @font-face {
   font-family: dana;
@@ -34,8 +36,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
   }
-  #offcanvas-of-right-menu,#offcanvas-of-left-menu{
+  #offcanvas-of-right-menu,
+  #offcanvas-of-left-menu {
     visibility: hidden;
   }
-
 }
